@@ -14,6 +14,13 @@ import pandas as pd
 import numpy as np
 
 
+# Load environment variables from .env file
+load_dotenv()
+
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET')
+USER_AGENT = os.getenv('USER_AGENT')
+
 # In[2]:
 
 
@@ -24,9 +31,9 @@ nltk.download('stopwords')
 # In[3]:
 
 
-reddit = praw.Reddit(client_id='*********',
-                    client_secret='******************',
-                    user_agent='*********') ## to use this, make a Reddit app. Client ID is in top left corner, client secret is given, and user agent is the username that the app is under
+reddit = praw.Reddit(client_id=CLIENT_ID,
+                    client_secret=CLIENT_SECRET,
+                    user_agent=USER_AGENT) ## to use this, make a Reddit app. Client ID is in top left corner, client secret is given, and user agent is the username that the app is under
 
 
 # In[4]:
